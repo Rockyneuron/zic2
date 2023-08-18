@@ -101,7 +101,7 @@ LC4frames_norm=(cellfun(@(x) mat2gray(x),LC4frames,'UniformOutput', false)) ;
 %%
 
 %--------------- Denoise data---------------------
-m=5;  %tamaño de la mascara
+m=5;  %tamaÃ±o de la mascara
 n=5;
 
 % Denoise normalized data for cualitative ocular dominance areas
@@ -439,7 +439,7 @@ ODIbino.raw=bin_equ_ODI;
 ODIbino.equ=bin_RAW_ODI;
 
 SNR.contra=SNR_contra;
-SNR.ipsi=SNR_ipsi;
+SNR.ipsi=SNR_ipsi;fiufigure
 
 cd(file_store)
 mkdir(filename); cd(filename); save(num2str(filename))
@@ -449,8 +449,6 @@ imwrite(mat2gray(~isnan(ROI)),'ROI.tif')
 imwrite(mat2gray(solap),'solap.tif')
 imwrite(mat2gray(data.contra_raw),'contra_raw.tif')
 imwrite(mat2gray(data.ipsi_raw),'ipsi_raw.tif')
-imwrite(mat2gray(data.contra_raw.*ROI),'contra_raw_roi.tif')
-imwrite(mat2gray(data.ipsi_raw.*ROI),'ipsi_raw_roi.tif')
 saveas(fig_odi,'filt_odi.png')
 saveas(fig_odi_all,'filt_odi_all.png')
 saveas(bino_odi,'bino_odi.png')
