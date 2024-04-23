@@ -15,21 +15,22 @@ ipsi='261018Mice_mutant_171_E8B0.BLK.mat'
 
 
 condition=5;
-pprest=[1,3]; %prestimulus frames que usamos en el analysis [from:to]
-alfa=1;%proporcion del baseline que eliminamos
-clip=2; %std que usamos para ver la'no imagen
-normalization='background div';%'background subs','background div',...
+pprest=[1,3]; %prestimulus frames used for analysis [from:to]
+alfa=1;%alfa parameter for baseline
+clip=2; %std clipping used to se the signal
+normalization='background div';%'background subs','background div', (Type of normalization)
 thr=0.7; %response region threshold
 greymap=flipud(colormap('gray'))
 colormap_use= colormap(greymap)
 background_color=[0.2,0.2,0.4]
 
+% Types of normalization:
 %'cocktail', ' blank'
 %'dif_back_div', 'dif_back_div_blank' , 'dif_back_div_cock',
 %'dif_back_subs','dif_back_subs_blank','dif_back_subs_cock'
 
 
-%%%%%%%%%%%%%%%% Extract the data%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%       Extract the data                    %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 exp={contra; ipsi}   % {righteye; lefteye;binocular};
 for i=1:length(exp)
@@ -49,8 +50,8 @@ for i=1:length(exp)
     % single_condition_map_montage(c0,c1,c2,c3,c4,ik,condition,pprest,alfa,clip,normalization)
     [cellc1,cellc2,cellc3,cellc4,cond1bl,cond2bl,cond3bl,cond4bl]=mouse_montage240418(c0,c1,c2,c3,c4,alfa,pprest,clip,normalization);
 
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%select frame for%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %%%%%%%%%%%%%%%%%%%%%%%%%analysis%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%        select frame for     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%           analysis            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     frame=input('Select frame for analysis, single or mean [frame:toframe]  = ');  %consola de comandos y seleccionar frame
     % [c1,c2,c3,c4]=singlecond_map_selec(c0,c1,c2,c3,c4,ik,condition,pprest,alfa,frame,clip,normalization);
     c1=cellc1(:,:,frame);c2=cellc2(:,:,frame);c3=cellc3(:,:,frame);c4=cellc4(:,:,frame);
@@ -101,7 +102,7 @@ LC4frames_norm=(cellfun(@(x) mat2gray(x),LC4frames,'UniformOutput', false)) ;
 %%
 
 %--------------- Denoise data---------------------
-m=5;  %tamaño de la mascara
+m=5;  %tamaï¿½o de la mascara
 n=5;
 
 % Denoise normalized data for cualitative ocular dominance areas
