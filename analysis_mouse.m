@@ -102,7 +102,7 @@ LC4frames_norm=(cellfun(@(x) mat2gray(x),LC4frames,'UniformOutput', false)) ;
 %%
 
 %--------------- Denoise data---------------------
-m=5;  %tama�o de la mascara
+m=5;  %size of convolution mask
 n=5;
 
 % Denoise normalized data for cualitative ocular dominance areas
