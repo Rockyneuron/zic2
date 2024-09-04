@@ -1,6 +1,12 @@
 Code for anlysis of experiments for paper [1]
 
-To execute the analysis, simply run the "extract_table_data.mat" file.
+To execute the analysis follow these steps:
+
+1) Download de analysed folder from [3]
+2) Extract the folder into the repository location
+3) Run "extract_table_data.mat":
+
+
 This script uses the data from the analysed folder to loop across each expermiment in exp.txt to obtain a final data_matrix called 
 'data_table.xlsx'. This table contains the data of figure 3 from [1].
 The analysed folder can also be found in [3]. Inside each folder the resulting data from each experiment can be seen.
