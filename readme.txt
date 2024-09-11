@@ -2,8 +2,8 @@ Code for anlysis of experiments for paper [1]
 
 To execute the analysis follow these steps:
 
-1) Download de analysed folder from [3]
-2) Extract the folder into the repository location
+1) Download the <analysed> folder from [3]
+2) Extract the <analysed> folder into the repository location. Delete the zip file
 3) Run "extract_table_data.mat":
 
 
